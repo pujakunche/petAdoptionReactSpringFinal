@@ -1,0 +1,57 @@
+services:
+  postgres:
+    container_name: pet-postgres-container
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    networks:
+      - pet-app
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: pet-pgadmin-container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    networks:
+      - pet-app
+    restart: unless-stopped
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:20.0.0
+    ports:
+      - "9090:8080"
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    networks:
+      - pet-app
+    volumes:
+      - keycloak-data:/opt/keycloak/data/
+      # doesn't work with json array with multiple realms?
+      # - ./keycloak:/opt/keycloak/data/import
+    restart: unless-stopped
+    command:
+      - "-v start-dev"
+
+networks:
+  pet-app:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  pgadmin-data:
+  keycloak-data:
