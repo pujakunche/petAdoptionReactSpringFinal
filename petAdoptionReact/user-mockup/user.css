@@ -1,0 +1,102 @@
+*{
+    font-family: "Sofia", sans-serif;
+    text-decoration: none;
+    
+}
+
+.title{
+    color:white;
+    font-family: "Sofia", sans-serif;
+    font-size: 50px;  
+   
+}
+.headergroup{
+    background-color: #dbd8e3;;
+    text-align: center;
+    box-shadow: 10px 10px 5px grey;
+
+}
+.table{
+    text-align: center;
+}
+.tablegroup{
+    justify-items: center;
+    box-shadow: 10px 10px 5px grey;
+    
+}
+.logo{
+    height: 200px;
+    width: 160px;
+    border-radius: 40px;
+    border: solid 5px white;
+
+}
+.footer{
+    text-align: right;
+    background-color: bisque;
+    font-family: "Sofia", sans-serif;
+    box-shadow: 10px 10px 5px grey;
+}
+.midsection{
+    text-align: center;
+}
+.midsectiongroup{
+    background-color:  #defcf9; 
+    box-shadow: 10px 10px 5px grey;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 40px ;
+    
+}
+.button {
+    background-color: bisque; 
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 40px;
+    box-shadow: 10px 10px 5px grey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+  .button:hover{
+    background-color: blueviolet;
+    color: gold;
+  }
+.buttongroup{
+   justify-items: center;
+   text-align: center;
+   margin-bottom: 1%;
+   margin-top: 1%;
+   
+}
+.photos{
+    height: auto;
+    width: 100px;
+}
+.navClass{
+    font-size: 40px;
+    color: gold;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+}
+
+.navLink:hover{
+background-color: blueviolet;
+color: gold;
+}
+.navLink{
+    background-color: bisque;
+    color: black;
+    border-radius: 40px;
+    box-shadow: 10px 10px 5px grey;
+}
+.logo:hover{
+    border-color: blueviolet;
+    border-style: dotted;
+}

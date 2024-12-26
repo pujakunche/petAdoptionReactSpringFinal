@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet App Admin Page</title>
+    <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+    <header>Pet App Admin Page</header>
+    <nav>
+        <ul>
+            <li><a href="../user-mockup/user.html">Adoption Page</a></li>
+            <li><a>Archived Pets</a></li>
+            <li><a>Adopted Pets</a></li>
+            <li><a href="https://google.com">Questions?</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h3>Admin Page</h3>
+        <div id="modifiers">
+            <button onclick="openPopup('Add A Pet')">Add A Pet</button>
+            <button onclick="openPopup('Archive Pets')">Archive Pets</button>
+            <button onclick="openPopup('Remove Pets')">Remove Pets</button>
+        </div>
+
+        <!-- Popup -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <h2 id="popup-title">Popup Title</h2>
+                <form id="popup-form">
+                    <label for="pet-name">Pet Name:</label>
+                    <input type="text" id="pet-name" name="pet-name" required><br><br>
+
+                    <label for="pet-breed">Pet Breed:</label>
+                    <input type="text" id="pet-breed" name="pet-breed" required><br><br>
+
+                    <label for="pet-age">Pet Age:</label>
+                    <input type="number" id="pet-age" name="pet-age" required><br><br>
+
+                    <button type="submit">Submit</button>
+                    <button type="button" onclick="closePopup()">Close</button>
+                </form>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Picture</th>
+                    <th>Breed</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><img src="https://via.placeholder.com/100" alt="Golden Retriever" class="pet-image"></td>
+                    <td>Golden Retriever</td>
+                    <td>Buddy</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><img src="https://via.placeholder.com/100" alt="Persian Cat" class="pet-image"></td>
+                    <td>Persian Cat</td>
+                    <td>Whiskers</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><img src="https://via.placeholder.com/100" alt="Parrot" class="pet-image"></td>
+                    <td>Parrot</td>
+                    <td>Polly</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <span><strong>About A Pet - HTML Mockup</strong></span>
+    </footer>
+
+    <script src="./admin.js"></script>
+</body>
+</html>
